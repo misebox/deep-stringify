@@ -51,15 +51,6 @@ func TestConvertSliceAndArray(t *testing.T) {
 	if !reflect.DeepEqual(results, exp) {
 		t.Errorf("Error: expected %#v, got %#v", exp, res)
 	}
-
-	// if len(results) == 3 &&
-	// 	results[0] != exp[0] &&
-	// 	results[1] != exp[1] &&
-	// 	len(results[2].([]string)) == 2 &&
-	// 	results[2].([]string)[0] != exp[2].([]string)[0] &&
-	// 	results[2].([]string)[1] != exp[2].([]string)[1] {
-	// 	t.Errorf("Error: expected %#v, got %#v", exp, res)
-	// }
 }
 
 func TestConvertMap(t *testing.T) {
@@ -86,22 +77,10 @@ func TestConvertMap(t *testing.T) {
 	if !ok {
 		t.Errorf("Error: expected %#v, got %#v", exp, res)
 	}
-	// key3Map, ok := resMap["key3"].(map[string]any)
-	// if !ok {
-	// 	t.Errorf("Error: expected %T, got %v", exp, res)
-	// }
 
 	if !reflect.DeepEqual(resMap, exp) {
 		t.Errorf("Error: expected %#v, got %#v", exp, res)
 	}
-	// if len(resMap) == 3 &&
-	// 	resMap["key1"] != exp["key1"] &&
-	// 	resMap["key2"] != exp["key2"] &&
-	// 	len(key3Map) == 2 &&
-	// 	key3Map["key4"] != expKey3Map["key4"] &&
-	// 	key3Map["key5"] != expKey3Map["key5"] {
-	// 	t.Errorf("Error: expected %#v, got %#v", exp, res)
-	// }
 }
 
 func TestConvertNil(t *testing.T) {
